@@ -8,8 +8,8 @@ import graph.Vertex;
 
 public class Main {
     public static void main(String[] args) {
-        String filePath = "res/test1.txt";
-//        String filePath = "res/graph1.txt";
+//        String filePath = "res/test1.txt";
+        String filePath = "res/graph1.txt";
 //        String filePath = "res/graph2.txt";   //-    //error
 //        String filePath = "res/graph3.txt";   //-     //error
 //        String filePath = "res/graph4.txt";
@@ -39,7 +39,7 @@ public class Main {
         }
 
         BellmanAlgorithm.computeShortestPath(graph, new Vertex("0"));
-        DijkstraAlgorithm.computeShortestPath(graph, new Vertex("0"));
+//        DijkstraAlgorithm.computeShortestPath(graph, new Vertex("0"));
 //        System.out.println("____________");
     }
 }

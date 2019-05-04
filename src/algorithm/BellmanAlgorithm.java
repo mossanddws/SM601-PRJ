@@ -4,6 +4,8 @@ import graph.Arc;
 import graph.Graph;
 import graph.Vertex;
 
+import java.util.ArrayList;
+
 public class BellmanAlgorithm {
 
     private static final int INFINITY = Integer.MAX_VALUE;
@@ -21,7 +23,15 @@ public class BellmanAlgorithm {
             }
         }
 
+        int allNegativeArc = 0;
+        for (Arc arc : graph.getArcs()) {
+            if (arc.getValue() < 0) {
+                allNegativeArc += arc.getValue();
+            }
+        }
+
         boolean hasChanged;
+        boolean hasNegativeWeightCycle = false;
         do {
             hasChanged = false;
             for (int i = 0; i < graph.getVertices().size(); ++i) {
@@ -48,10 +58,21 @@ public class BellmanAlgorithm {
                     }
                 }
             }
-        } while (hasChanged);
+            for (int d : distance) {
+                if (d < allNegativeArc) {
+                    hasNegativeWeightCycle = true;
+                    break;
+                }
+            }
+        } while (hasChanged && !hasNegativeWeightCycle);
+
+        if (hasNegativeWeightCycle) {
+            System.out.println("Has negative cycle !");
+            return;
+        }
 
         for (Vertex vertex : graph.getVertices()) {
-            System.out.print("  "+vertex+"   ");
+            System.out.print("  " + vertex + "   ");
         }
         System.out.println();
         for (int k = 0; k < graph.getVertices().size(); ++k) {
