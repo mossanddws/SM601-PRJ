@@ -11,6 +11,7 @@ public class DijkstraAlgorithm {
     private static final int INFINITY = Integer.MAX_VALUE;
 
     public static void computeShortestPath(Graph graph, Vertex sourceVertex) {
+        System.out.println("Dijkstra Algorithm: ");
         graph.getVertices().sort((vertex1, vertex2) -> Integer.compare(vertex1.getName().compareTo(vertex2.getName()), 0));
         int min = 0;
         int[] distance = new int[graph.getVertices().size()];

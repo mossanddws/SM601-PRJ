@@ -36,6 +36,7 @@ public class Graph {
     }
 
     public boolean[][] generateAdjacencyMatrix() {
+        System.out.println("Adjacency Matrix: ");
         getVertices().sort((vertex1, vertex2) -> Integer.compare(vertex1.getName().compareTo(vertex2.getName()), 0));
         boolean[][] adjacencyMatrix = new boolean[getVertices().size()][getVertices().size()];
         for (int i = 0; i < adjacencyMatrix.length; ++i) {
@@ -53,6 +54,7 @@ public class Graph {
     }
 
     public int[][] generatedValueMatrix() {
+        System.out.println("Value Matrix: ");
         getVertices().sort((vertex1, vertex2) -> Integer.compare(vertex1.getName().compareTo(vertex2.getName()), 0));
         int[][] valueMatrix = new int[getVertices().size()][getVertices().size()];
         for (int i = 0; i < valueMatrix.length; ++i) {
