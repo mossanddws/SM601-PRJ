@@ -8,9 +8,17 @@ import graph.Vertex;
 
 public class Main {
     public static void main(String[] args) {
-//        String filePath = "res/test1.txt";
-        String filePath = "res/graph4.txt";
+        String filePath = "res/test1.txt";
+//        String filePath = "res/graph1.txt";
+//        String filePath = "res/graph2.txt";   //-    //error
+//        String filePath = "res/graph3.txt";   //-     //error
+//        String filePath = "res/graph4.txt";
+//        String filePath = "res/graph5.txt";   //5
+//        String filePath = "res/graph6.txt";
+//        String filePath = "res/graph7.txt";     //-     //error
+//        String filePath = "res/graph8.txt";     //3
 //        String filePath = "res/graph9.txt";
+//        String filePath = "res/graph10.txt";    //-   //5   //error
         TextFile file = new TextFile(filePath);
         Graph graph = new Graph(file.read());
 
